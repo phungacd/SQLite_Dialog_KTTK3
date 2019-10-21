@@ -22,7 +22,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     EditText et_id, et_title, et_author;
-    Button button_save, button_select, button_update, button_delete;
+    Button button_save, button_select, button_update, button_delete, button_exit;
     GridView gv_display;
     ArrayAdapter<String> adapter;
     Dialog dialog;
@@ -32,6 +32,17 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        eventClickExit();
+    }
+
+    private void eventClickExit() {
+        button_exit = (Button) findViewById(R.id.button_exit);
+        button_exit.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                finish();
+            }
+        });
     }
 
     private void evenClickUpdate() {
